@@ -17,8 +17,9 @@ public class Compare01 implements Comparator<String> {
     private static final List<UserInfo> userInfos;
 
     static {
-        userInfos = Lists.newArrayList(new UserInfo("lidongliang", 27, 1), new UserInfo("liyongxuan",
-                26, 0), new UserInfo("Tony", 30, 0));
+        userInfos = Lists.newArrayList(new UserInfo("lidongliang", 27, 1, true),
+                new UserInfo("liyongxuan",26, 0, true),
+                new UserInfo("Tony", 30, 0, true));
     }
 
     @Override
@@ -89,7 +90,7 @@ public class Compare01 implements Comparator<String> {
      * JDK8
      * lambda
      */
-    public void c4() {
+    private void c4() {
 //        userInfos.sort((UserInfo h1, UserInfo h2) -> h1.getUserName().compareTo(h2.getUserName()));
 //        userInfos.sort((h1, h2) -> h1.getUserName().compareTo(h2.getUserName()));
         userInfos.sort((lhs, rhs) -> {

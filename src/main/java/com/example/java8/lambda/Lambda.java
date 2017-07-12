@@ -5,6 +5,7 @@ import java.util.function.BinaryOperator;
 
 /**
  * Created by lidongliang on 2017/7/10.
+ * Lambda 表达式
  */
 public class Lambda {
 

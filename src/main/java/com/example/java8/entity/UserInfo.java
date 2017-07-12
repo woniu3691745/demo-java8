@@ -9,6 +9,7 @@ public class UserInfo {
     private String userName;
     private int age;
     private int sex;
+    private Boolean isHeight;
 
     public String getUserName() {
         return userName;
@@ -34,10 +35,12 @@ public class UserInfo {
         this.sex = sex;
     }
 
-    public UserInfo(String userName, int age, int sex) {
-        this.userName = userName;
-        this.age = age;
-        this.sex = sex;
+    public Boolean getHeight() {
+        return isHeight;
+    }
+
+    public void setHeight(Boolean height) {
+        isHeight = height;
     }
 
     @Override
@@ -46,6 +49,14 @@ public class UserInfo {
                 "userName='" + userName + '\'' +
                 ", age=" + age +
                 ", sex=" + sex +
+                ", isHeight=" + isHeight +
                 '}';
+    }
+
+    public UserInfo(String userName, int age, int sex, Boolean isHeight) {
+        this.userName = userName;
+        this.age = age;
+        this.sex = sex;
+        this.isHeight = isHeight;
     }
 }

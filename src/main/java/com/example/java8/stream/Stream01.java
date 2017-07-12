@@ -77,9 +77,9 @@ public class Stream01 {
      * 1：Stream上常用的操作之一是求最大值和最小值
      */
     private void minAndMax () {
-        List<UserInfo> userInfos = asList(new UserInfo("lidongliang", 27, 1),
-                new UserInfo("liyongxuan", 26, 0),
-                new UserInfo("lixiaoming", 29, 1));
+        List<UserInfo> userInfos = asList(new UserInfo("lidongliang", 27, 1, true),
+                new UserInfo("liyongxuan", 26, 0, true),
+                new UserInfo("lixiaoming", 29, 1, true));
         UserInfo userInfo1 = userInfos.stream()
 //                .min(Comparator.comparing(userInfo -> userInfo.getAge()))
                 .max(Comparator.comparing(userInfo -> userInfo.getAge()))
