@@ -13,7 +13,7 @@ import java.nio.file.Paths;
  */
 public class Io01 {
 
-    public void readFile () {
+    public void readFile() {
         File file = new File("D:\\PDF");
         String[] list = file.list();
         for (int i = 0; i < list.length; i++) {

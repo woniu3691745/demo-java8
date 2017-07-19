@@ -16,35 +16,40 @@ import static java.util.stream.Collectors.*;
 /**
  * Created by lidongliang on 2017/7/12.
  * collect 方法收集器
- *
+ * <p>
  * java.util.stream.Collectors -> 有静态方法
- *
  */
 public class Collect01 {
 
     /**
      * 取得最大
+     * max
+     *
      * @param userInfos 实体
      * @return UserInfo
      */
     private Optional<UserInfo> biggestGroup(Stream<UserInfo> userInfos) {
 //        Function<UserInfo,Integer> getCount = userInfo -> userInfo.getAge();
-        Function<UserInfo,Integer> getCount = UserInfo::getAge;
+        Function<UserInfo, Integer> getCount = UserInfo::getAge;
         return userInfos.max(comparing(getCount));
     }
 
     /**
      * 平均值
+     * averaging
+     *
      * @param userInfos 实体
      */
-    private void average (List<UserInfo> userInfos) {
+    private void average(List<UserInfo> userInfos) {
         Double collect = userInfos.stream().collect(averagingInt(u -> u.getAge()));
 //        Double collect = userInfos.stream().collect(averagingInt(UserInfo::getAge));
         System.out.println("average is " + collect);
     }
 
     /**
-     * partitioningBy 数据分块
+     * 数据分块
+     * partitioningBy
+     *
      * @param userInfos 实体
      * @return 通过字段height分块
      */
@@ -53,7 +58,9 @@ public class Collect01 {
     }
 
     /**
-     * groupingBy 数据分组
+     * 数据分组
+     * groupingBy
+     *
      * @param userInfos 实体
      * @return 分组后数据
      */
@@ -62,10 +69,12 @@ public class Collect01 {
     }
 
     /**
+     * 拼接
      * joining
+     *
      * @param userInfo 实体
      */
-    private void joinString (List<UserInfo> userInfo) {
+    private void joinString(List<UserInfo> userInfo) {
         String result =
                 userInfo.stream()
                         .map(UserInfo::getUserName)
@@ -77,6 +86,7 @@ public class Collect01 {
     /**
      * 下游收集器
      * mapping
+     *
      * @param userInfos 实体
      * @return {lidongliang=[1], liyongxuan=[0, 1], lixiaoming=[1, 2]}
      */
@@ -88,10 +98,10 @@ public class Collect01 {
 
     public static void main(String[] args) {
         List<UserInfo> userInfos = asList(new UserInfo("lidongliang", 27, 1, true),
-                new UserInfo("liyongxuan", 26, 0,true),
-                new UserInfo("lixiaoming", 29, 1 ,false),
-                new UserInfo("lixiaoming", 29, 2 ,false),
-                new UserInfo("liyongxuan", 29, 1 ,false));
+                new UserInfo("liyongxuan", 26, 0, true),
+                new UserInfo("lixiaoming", 29, 1, false),
+                new UserInfo("lixiaoming", 29, 2, false),
+                new UserInfo("liyongxuan", 29, 1, false));
 
         Collect01 collect01 = new Collect01();
 

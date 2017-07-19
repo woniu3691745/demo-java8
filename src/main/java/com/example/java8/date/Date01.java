@@ -13,7 +13,7 @@ public class Date01 {
     /**
      * 用LocalDateTime获得当前时间
      */
-    private void getLocalDateTime () {
+    private void getLocalDateTime() {
         LocalDateTime localDateTime = LocalDateTime.now();
         String format = localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         System.out.println("localDateTime = " + format);
@@ -24,7 +24,7 @@ public class Date01 {
      * 1.将java.util.Date转换为ZonedDateTime。
      * 2.使用它的toLocalDate（）方法从ZonedDateTime获取LocalDate。
      */
-    public void dateToLocalDate () {
+    public void dateToLocalDate() {
         Date date = new Date();
         Instant instant = date.toInstant();
         ZoneId zoneId = ZoneId.systemDefault();
@@ -38,7 +38,7 @@ public class Date01 {
      * 1.使用ZonedDateTime将LocalDate转换为Instant。
      * 2.使用from（）方法从Instant对象获取Date的实例
      */
-    public void localDateToDate () {
+    public void localDateToDate() {
         ZoneId zoneId = ZoneId.systemDefault();
         LocalDate localDate = LocalDate.now();
         ZonedDateTime zdt = localDate.atStartOfDay(zoneId);
@@ -52,7 +52,7 @@ public class Date01 {
      * 1.从日期获取ZonedDateTime并使用其方法toLocalDateTime（）获取LocalDateTime
      * 2.使用LocalDateTime的Instant（）工厂方法
      */
-    public void dateTimeToLocalDateTime () {
+    public void dateTimeToLocalDateTime() {
         Date date = new Date();
         Instant instant = date.toInstant();
         ZoneId zoneId = ZoneId.systemDefault();
@@ -67,7 +67,7 @@ public class Date01 {
      * 1.使用atZone（）方法将LocalDateTime转换为ZonedDateTime
      * 2.将ZonedDateTime转换为Instant，并从中获取Date
      */
-    public void localDateTimeTimeToDateTime () {
+    public void localDateTimeTimeToDateTime() {
         ZoneId zoneId = ZoneId.systemDefault();
         LocalDateTime localDateTime = LocalDateTime.now();
         ZonedDateTime zdt = localDateTime.atZone(zoneId);

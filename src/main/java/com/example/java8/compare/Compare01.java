@@ -18,7 +18,7 @@ public class Compare01 implements Comparator<String> {
 
     static {
         userInfos = Lists.newArrayList(new UserInfo("lidongliang", 27, 1, true),
-                new UserInfo("liyongxuan",26, 0, true),
+                new UserInfo("liyongxuan", 26, 0, true),
                 new UserInfo("Tony", 30, 0, true));
     }
 

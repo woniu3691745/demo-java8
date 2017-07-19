@@ -19,6 +19,4 @@ public class ReferenceMethod {
      * 数组
      * String[]::new
      */
-
-    
 }

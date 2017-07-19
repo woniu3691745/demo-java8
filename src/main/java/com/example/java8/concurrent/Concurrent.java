@@ -46,9 +46,10 @@ public class Concurrent {
     /**
      * parallelStream
      * 哪种方式花的时间更多取决于串行或并行化运行时的环境
+     *
      * @param userInfoList 实体
      */
-    private void serialArrayNum (List<UserInfo> userInfoList) {
+    private void serialArrayNum(List<UserInfo> userInfoList) {
         long count = userInfoList
                 .parallelStream()
 //                .flatMap(UserInfo::getUserName)
@@ -60,10 +61,10 @@ public class Concurrent {
 
     public static void main(String[] args) {
         List<UserInfo> userInfos = asList(new UserInfo("lidongliang", 27, 1, true),
-                new UserInfo("liyongxuan", 26, 0,true),
-                new UserInfo("lixiaoming", 29, 1 ,false),
-                new UserInfo("lixiaoming", 29, 2 ,false),
-                new UserInfo("liyongxuan", 29, 1 ,false));
+                new UserInfo("liyongxuan", 26, 0, true),
+                new UserInfo("lixiaoming", 29, 1, false),
+                new UserInfo("lixiaoming", 29, 2, false),
+                new UserInfo("liyongxuan", 29, 1, false));
         Concurrent concurrent = new Concurrent();
 
         concurrent.serialArrayNum(userInfos);

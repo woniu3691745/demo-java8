@@ -28,6 +28,5 @@ public class Lambda {
         // Lambda参数类型有编译器推断得出，也可以显示声明
         BinaryOperator<Long> addExplicit = (Long x, Long y) -> x + y;
 
-
     }
 }
