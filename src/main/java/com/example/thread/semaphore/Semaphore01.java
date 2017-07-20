@@ -9,7 +9,7 @@ import java.util.concurrent.Semaphore;
  * Semaphore 信号量
  * 信号量可以指定多个线程，同时访问某一个资源
  */
-public class Semaphore01 implements Runnable{
+public class Semaphore01 implements Runnable {
 
     private final Semaphore semp = new Semaphore(5);
 
