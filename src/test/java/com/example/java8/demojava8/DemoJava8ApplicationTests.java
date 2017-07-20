@@ -1,5 +1,6 @@
 package com.example.java8.demojava8;
 
+import javafx.geometry.VPos;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,6 +12,12 @@ public class DemoJava8ApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
+	}
+
+	@Test
+	public void getCpuNum() {
+		System.out.println("cpu number is " + Runtime.getRuntime().availableProcessors());
 	}
 
 }
