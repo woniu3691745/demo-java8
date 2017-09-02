@@ -1,4 +1,4 @@
-package com.example.IO;
+package com.example.io;
 
 import java.io.*;
 
