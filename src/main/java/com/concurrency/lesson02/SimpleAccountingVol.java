@@ -7,12 +7,12 @@ package com.concurrency.lesson02;
  * @author lidongliang
  * @create 2017-11-02 14:06
  */
-public class SimplAccountingVol implements Runnable {
+public class SimpleAccountingVol implements Runnable {
 
     /**
      * 指定加锁对象：对给定对象加锁，进入同步代码前要获得给定对象的锁
      */
-    static SimplAccountingVol instance = new SimplAccountingVol();
+    static SimpleAccountingVol instance = new SimpleAccountingVol();
 
 //    private static int i = 0;
 
@@ -46,8 +46,8 @@ public class SimplAccountingVol implements Runnable {
     public static void main(String[] args) throws InterruptedException {
 //        Thread t1 = new Thread(instance);
 //        Thread t2 = new Thread(instance);
-        Thread t1 = new Thread(new SimplAccountingVol());
-        Thread t2 = new Thread(new SimplAccountingVol());
+        Thread t1 = new Thread(new SimpleAccountingVol());
+        Thread t2 = new Thread(new SimpleAccountingVol());
         t1.start();
         t2.start();
         t1.join();
