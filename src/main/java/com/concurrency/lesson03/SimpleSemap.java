@@ -17,10 +17,12 @@ public class SimpleSemap implements Runnable {
     @Override
     public void run() {
         try {
+            // 申请信号量
             semp.acquire();
             Thread.sleep(2000);
             System.out.println(Thread.currentThread().getId() + ":done!");
             semp.release();
+            // 释放信号量
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
