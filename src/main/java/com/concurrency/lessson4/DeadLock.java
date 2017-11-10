@@ -1,4 +1,4 @@
-package com.concurrency.lessson3;
+package com.concurrency.lessson4;
 
 /**
  * 描述:
@@ -61,5 +61,7 @@ public class DeadLock extends Thread {
         哲学家B.start();
         Thread.sleep(1000);
 
+//        String 李栋梁 = "ldl";
+        
     }
 }
