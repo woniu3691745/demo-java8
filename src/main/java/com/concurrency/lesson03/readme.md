@@ -48,3 +48,46 @@
  + newCachedThreadPool()方法：该方法返回一个可以根据实际情况调整线程数量的线程池。
  + newSingleThreadScheduledExecutor()方法：该方法返回一个ScheduledExecutorService对象，线程池大小为1。定时任务。
  + newScheduledThreadPool()方法：该方法返回一个ScheduledExecutorService对象，线程池大小可以指定。
+ 
+###核心线程池的内部实现
+    'public ThreadPoolExecutor(int corePoolSize,
+                              int maximumPoolSize,
+                              long keepAliveTime,
+                              TimeUnit unit,
+                              BlockingQueue<Runnable> workQueue,
+                              ThreadFactory threadFactory,
+                              RejectedExecutionHandler handler)'
+  + corePoolSize: 指定了线程池中的线程数量。
+  + maximumPoolSize：指定了线程池中的最大线程数量。
+  + keepAliveTime：当线程池线程数量超过corePoolSize时，多余的空闲线程的存活时间。
+    即，超过corePoolSize的空闲线程，在多长时间内，会被销毁。
+  + unit：keepAliveTime的单位。
+  + workQueue：任务队列，被提交但尚未被执行的任务。
+  + ThreadFactory：线程工厂，用于创建线程，一般用默认的即可。
+  + handler：拒绝策略。当任务太多来不及处理，如何拒绝任务。
+  
+> workQueue
+
++ 直接提交的队列
++ 有界的任务队列
++ 无界的任务队列
++ 优先任务队列
+
+###超负载了怎么办？拒绝策略
+  + AbortPolicy策略：该策略会直接抛出异常，阻止系统正常工作。
+  + CallerRunsPolicy策略：只要线程池未关闭，该策略直接在调用者线程中，运行当前被丢弃的任务。
+  + DiscardOledestPolicy策略：该策略将丢弃最老的一个请求，也就是即将被执行的一个任务，并尝试再次提交当前任务。
+  + DiscardPolicy策略：该策略默默地丢弃无法处理的任务，不予任何处理。
+
+###分而治之（Fork/Join）
+> ForkJoinTask任务就是支持fork()分解及join()等待的任务。
+  + RecursiveAction：没有返回值的任务。
+  + RecursiveTask：可以携带返回值的任务。
+  
+  
+###超好用的工具类：并发集合简介
++ ConcurrentHashMap：这是一个高效的并发HashMap，这是一个线程安全的HashMap。
++ CopyOnWriteArrayList：这是一个List，从名字看就是和ArrayList是一族的，在读写少的场合，这List的性能非常好，远远好于Vector。
++ ConcurrentLinkedQueue：高效的并发队列，使用链表实现。可以看做一个线程安全的LinkedList。
++ BlockingQueue：这是一个接口，JDK内部通过链表，数组等方式实现了这个接口。表示阻塞队列，非常适合用于作为数据共享的通道。
++ ConcurrentSkipListMap：跳表的实现。这是一个Map，使用跳表的数据结构进行快速查找。（有序Map）

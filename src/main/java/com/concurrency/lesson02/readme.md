@@ -1,13 +1,10 @@
 ##中断
-> `1.public void Thread.interrupt()` // 中断线程
-
-> `2.public boolean Thread.isInterrupted()` // 判断是否被中断
-
-> `3.public static boolean Thread.interrupted()` // 判断是否被中断，并清除当前中断标识
++ `1.public void Thread.interrupt()` // 中断线程
++ `2.public boolean Thread.isInterrupted()` // 判断是否被中断
++ `3.public static boolean Thread.interrupted()` // 判断是否被中断，并清除当前中断标识
 
 ##join yield
  + join() 本质是让调用线程 wait() 在当前线程对象实例上。
-
  + Thread.yield() 它会使当前线程让出CPU，但不代表当前线程不执行了。
  
 ##JMM
@@ -23,10 +20,7 @@
 
 ##synchronized
 > 作用：实现线程的同步，对同步代码加锁，使得每一次只能有一个线程进入同步块，从而保证线程间的安全性。还可以保证线程间的可见性和有序性。
-
-> `1.synchroized(this)` // this: 当前class的实例
-
-> `2.synchroized(object)` // object: 当前object对象
-
-> `3.synchroized(A.class)` // A.class: A这个类，不是对象实例
++ `1.synchroized(this)` // this: 当前class的实例
++ `2.synchroized(object)` // object: 当前object对象
++ `3.synchroized(A.class)` // A.class: A这个类，不是对象实例
 
