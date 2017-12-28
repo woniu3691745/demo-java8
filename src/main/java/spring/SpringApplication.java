@@ -14,7 +14,9 @@ public class SpringApplication {
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring.xml");
-        BeanTest beanTest = (BeanTest) applicationContext.getBean("syaHello");
-        beanTest.SyaHello();
+//        BeanTest beanTest = (BeanTest) applicationContext.getBean("syaHello");
+        BeanTest beanTest1 = applicationContext.getBean("syaHello", BeanTest.class);
+        beanTest1.SyaHello();
+
     }
 }

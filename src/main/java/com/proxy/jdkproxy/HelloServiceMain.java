@@ -3,7 +3,7 @@ package com.proxy.jdkproxy;
 import com.proxy.jdkproxy.impl.HelloServiceImpl;
 
 /**
- * 描述:
+ * 描述: JDK的动态代理依靠接口实现
  *
  * @author lidongliang
  * @create 2017-11-16 14:07

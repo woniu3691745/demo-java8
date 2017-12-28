@@ -3,7 +3,7 @@ package com.proxy.cglib;
 import com.proxy.jdkproxy.impl.HelloServiceImpl;
 
 /**
- * 描述:
+ * 描述: cglib是针对类来实现代理的
  *
  * @author lidongliang
  * @create 2017-11-16 21:01

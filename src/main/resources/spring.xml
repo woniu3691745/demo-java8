@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- Set/Get 注入 -->
+    <!--<bean id="syaHello"
+          class="spring.BeanTest">
+        <property name="daoTest" ref="daoTest" />
+    </bean>-->
+
+    <!-- constructor 注入 -->
+    <!--<bean id="syaHello"-->
+          <!--class="spring.BeanTest">-->
+        <!--<constructor-arg name="year" value="28" />-->
+        <!--<constructor-arg ref="daoTest"/>-->
+    <!--</bean>-->
 
     <bean id="syaHello"
           class="spring.BeanTest">
+        <!--<constructor-arg name="year" value="28" />-->
+        <!--<constructor-arg ref="daoTest"/>-->
+        <property name="adminEmails">
+            <map>
+                <entry key="one" value="9.99"/>
+                <entry key="two" value="2.75"/>
+                <entry key="six" value="3.99"/>
+            </map>
+        </property>
     </bean>
-
+    <bean class="spring.InstantiationTracingBeanPostProcessor"/>
+    <import resource="dao.xml" />
 </beans>
