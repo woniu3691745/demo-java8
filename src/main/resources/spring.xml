@@ -33,5 +33,8 @@
         </property>
     </bean>
     <bean class="spring.InstantiationTracingBeanPostProcessor"/>
+
+    <context:component-scan base-package="spring.annotation" />
+
     <import resource="dao.xml" />
 </beans>

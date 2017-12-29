@@ -1,5 +1,8 @@
 package spring;
 
+import com.enums.SeckillStatEnum;
+import org.springframework.util.DigestUtils;
+
 import java.util.Iterator;
 import java.util.Map;
 
@@ -14,7 +17,6 @@ public class BeanTest {
     private DaoTest daoTest;
     private String year;
     private Map<String, Float> adminEmails;
-
 
 //    /**
 //     * 构造器注入
@@ -49,6 +51,8 @@ public class BeanTest {
             value = adminEmails.get(key);
             System.out.println(key + ":" + value);
         }
+
+        System.out.println(SeckillStatEnum.SUCCESS);
     }
 
     public Map<String, Float> getAdminEmails() {

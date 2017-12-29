@@ -1,4 +1,4 @@
-package jackson;
+package com.jackson;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
