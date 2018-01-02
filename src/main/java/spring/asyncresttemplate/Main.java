@@ -1,6 +1,5 @@
 package spring.asyncresttemplate;
 
-import com.java8.method.date.Date;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
@@ -22,6 +21,9 @@ public class Main {
         System.out.println("=== no wait");
     }
 
+    /**
+     * 异步
+     */
     private static void Async() {
         AsyncRestTemplate asyncRestTemplate = new AsyncRestTemplate();
         ListenableFuture<ResponseEntity<User>> future =
@@ -40,6 +42,9 @@ public class Main {
         });
     }
 
+    /**
+     * 同步
+     */
     private static void Sync() {
         RestTemplate template = new RestTemplate();
         ResponseEntity<User> forEntity = template.getForEntity("http://localhost:8080/user", User.class);
