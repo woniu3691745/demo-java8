@@ -9,14 +9,18 @@
            http://www.springframework.org/schema/context/spring-context-3.0.xsd
            http://www.springframework.org/schema/util
            http://www.springframework.org/schema/util/spring-util.xsd">
-    <context:component-scan base-package="spring.annotation"/>
 
-    <util:properties id="jdbcConfiguration" location="classpath:application.properties"/>
 
-    <!--<bean id="jdbcConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">-->
-        <!--<property name="location" value="classpath: application.properties"/>-->
-    <!--</bean>-->
+    <bean id="beanFirst" class="spring.bean.BeanFirst">
+        <property name="sourceList" ref="sourceList"/>
+    </bean>
 
-    <import resource="spring-content.xml"/>
+
+    <util:list id="sourceList">
+        <value>jackshaftoe@vagabond.org</value>
+        <value>eliza@thinkingmanscrumpet.org</value>
+        <value>vanhoek@pirate.org</value>
+        <value>d'Arcachon@nemesis.org</value>
+    </util:list>
 
 </beans>
