@@ -27,8 +27,32 @@ public class TryCatch {
         }
     }
 
-    public static void main(String[] args) {
-        int i = 1;
-        System.out.println(test(i));
+    public static String output = "";
+
+    private String abc = "123";
+
+    private static void foo(int i) {
+        try {
+            if (i == 1) {
+                throw new Exception();
+            }
+        } catch (Exception e) {
+            output += "2";
+            return;
+        } finally {
+            output += "3";
+        }
+        output += 4;
     }
+
+    public static void main(String[] args) {
+//        int i = 1;
+//        System.out.println(test(i));
+        foo(0);
+        foo(1);
+        System.out.println(output);
+
+    }
+
+
 }
